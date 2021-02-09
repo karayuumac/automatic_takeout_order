@@ -1,7 +1,8 @@
 import 'package:automatic_takeout_order/components/buttons/custom_circle_button.dart';
+import 'package:automatic_takeout_order/view/non_authenticated/register_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatelessWidget {
+class Startup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,15 @@ class LoginForm extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                final result = await showModalBottomSheet<int>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return RegisterBottomSheet();
+                  }
+                );
+                print(result);
+              },
             ),
           ],
         ),

@@ -1,6 +1,6 @@
 import 'package:automatic_takeout_order/state/auth/user/user_state.dart';
 import 'package:automatic_takeout_order/view/authenticated/home.dart';
-import 'package:automatic_takeout_order/view/non_authenticated/login_form.dart';
+import 'package:automatic_takeout_order/view/non_authenticated/stratup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +16,7 @@ class AuthMiddleWare extends StatelessWidget {
           );
       return Home();
     } else {
-      return LoginForm();
+      return Startup();
     }
   }
 }

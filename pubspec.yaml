@@ -34,7 +34,11 @@ dependencies:
   flutter_state_notifier:
   freezed_annotation:
 
+  font_awesome_flutter:
 
+  flutter_localizations:
+    sdk: flutter
+  google_fonts:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
