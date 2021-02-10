@@ -23,7 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_auth:
+
+  amplify_flutter:
+  amplify_auth_cognito:
+  amplify_analytics_pinpoint:
 
   flutter_native_splash:
 

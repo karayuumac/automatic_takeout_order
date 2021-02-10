@@ -1,16 +1,9 @@
-import 'package:automatic_takeout_order/state/auth/user/user_state.dart';
-import 'package:automatic_takeout_order/state/counter_state.dart';
-import 'package:automatic_takeout_order/view/auth/auth_middleware.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:automatic_takeout_order/view/middleware/amplify/initialize_amplify_middleware.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -45,10 +38,7 @@ class MyApp extends StatelessWidget {
         Locale('ja', 'JP'),
       ],
       home: MaterialApp(
-        home: StateNotifierProvider<UserStateNotifier, UserState>(
-          create: (_) => UserStateNotifier(),
-          child: AuthMiddleWare(),
-        ),
+        home: InitializeAmplifyMiddleware(),
       ),
     );
   }
