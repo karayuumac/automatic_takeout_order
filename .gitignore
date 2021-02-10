@@ -64,3 +64,6 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 amplify/team-provider-info.json
+
+amplify/
+lib/amplifyconfiguration.dart

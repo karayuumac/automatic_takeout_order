@@ -19,9 +19,9 @@ class InitializeAmplifyMiddlewareState
   bool _amplifyConfigured = false;
 
   @override
-  Future<void> initState() async {
+  void initState() {
     super.initState();
-    await _configureAmplify();
+    _configureAmplify();
   }
 
   @override
@@ -34,9 +34,9 @@ class InitializeAmplifyMiddlewareState
 
   /// Initialize Amplify
   Future<void> _configureAmplify() async {
-    final analyticsPinpoint = AmplifyAnalyticsPinpoint();
+    //final analyticsPinpoint = AmplifyAnalyticsPinpoint();
     final authCognito = AmplifyAuthCognito();
-    await Amplify.addPlugins([analyticsPinpoint, authCognito]);
+    await Amplify.addPlugins([/* analyticsPinpoint, */ authCognito]);
 
     await Amplify.configure(amplifyconfig);
     setState(() {
