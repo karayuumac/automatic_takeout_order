@@ -1,11 +1,9 @@
-import 'package:amplify_analytics_pinpoint/amplify_analytics_pinpoint.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:automatic_takeout_order/amplifyconfiguration.dart';
-import 'package:automatic_takeout_order/state/auth/user/user_state.dart';
 import 'package:automatic_takeout_order/view/middleware/auth/auth_middleware.dart';
+import 'package:automatic_takeout_order/view/middleware/loading/amplify_loading_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 
 class InitializeAmplifyMiddleware extends StatefulWidget {
   @override
@@ -15,7 +13,7 @@ class InitializeAmplifyMiddleware extends StatefulWidget {
 }
 
 class InitializeAmplifyMiddlewareState
-  extends State<InitializeAmplifyMiddleware> {
+    extends State<InitializeAmplifyMiddleware> {
   bool _amplifyConfigured = false;
 
   @override
@@ -26,19 +24,19 @@ class InitializeAmplifyMiddlewareState
 
   @override
   Widget build(BuildContext context) {
-    return StateNotifierProvider<UserStateNotifier, UserState>(
-      create: (_) => UserStateNotifier(),
-      child: AuthMiddleWare(),
-    );
+    return _amplifyConfigured ? AuthMiddleWare() : AmplifyLoadingView();
   }
 
   /// Initialize Amplify
   Future<void> _configureAmplify() async {
-    //final analyticsPinpoint = AmplifyAnalyticsPinpoint();
     final authCognito = AmplifyAuthCognito();
-    await Amplify.addPlugins([/* analyticsPinpoint, */ authCognito]);
+    await Amplify.addPlugins([authCognito]);
 
-    await Amplify.configure(amplifyconfig);
+    try {
+      await Amplify.configure(amplifyconfig);
+    } on AmplifyAlreadyConfiguredException {
+      print('Amplify was already configured. Looks like app restarted on android.');
+    }
     setState(() {
       _amplifyConfigured = true;
     });

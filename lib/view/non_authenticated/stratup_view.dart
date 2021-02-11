@@ -2,7 +2,7 @@ import 'package:automatic_takeout_order/components/buttons/custom_circle_button.
 import 'package:automatic_takeout_order/view/non_authenticated/register_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
-class Startup extends StatelessWidget {
+class StartupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,13 +33,12 @@ class Startup extends StatelessWidget {
                 ),
               ),
               onPressed: () async {
-                final result = await showModalBottomSheet<int>(
+                await showModalBottomSheet<int>(
                   context: context,
                   builder: (BuildContext context) {
                     return RegisterBottomSheet();
                   }
                 );
-                print(result);
               },
             ),
           ],

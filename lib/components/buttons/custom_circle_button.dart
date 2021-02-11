@@ -7,11 +7,13 @@ class CustomCircleButton extends StatelessWidget {
     @required this.onPressed,
     this.color = Colors.blue,
     this.margin,
+    this.disabled = false
   }) : super(key: key);
 
   final Widget child;
   final Color color;
   final EdgeInsetsGeometry margin;
+  final bool disabled;
   final VoidCallback onPressed;
 
   @override
@@ -26,7 +28,7 @@ class CustomCircleButton extends StatelessWidget {
           child: child,
           color: color,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          onPressed: onPressed,
+          onPressed: disabled ? null : onPressed,
         ),
       ),
     );

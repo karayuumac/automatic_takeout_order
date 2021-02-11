@@ -26,15 +26,13 @@ dependencies:
 
   amplify_flutter:
   amplify_auth_cognito:
-  amplify_analytics_pinpoint:
 
   flutter_native_splash:
 
   pedantic_mono:
 
-  provider:
-  state_notifier:
-  flutter_state_notifier:
+  hooks_riverpod:
+  flutter_hooks:
   freezed_annotation:
 
   font_awesome_flutter:

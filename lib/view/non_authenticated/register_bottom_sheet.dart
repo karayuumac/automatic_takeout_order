@@ -1,5 +1,4 @@
 import 'package:automatic_takeout_order/components/buttons/custom_circle_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -48,42 +47,49 @@ class RegisterBottomSheet extends StatelessWidget {
           const Divider(),
           CustomCircleIconButton(
             label: const Text(
-              'Googleで登録',
+              'メールアドレスで登録',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 color: Colors.white,
               ),
             ),
-            color: Colors.grey,
-            onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.google),
+            color: Colors.blue,
+            icon: const Icon(
+              Icons.mail_rounded,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed('/register');
+            },
           ),
           CustomCircleIconButton(
             margin: const EdgeInsets.only(bottom: 8),
             label: const Text(
-              'Googleで登録',
+              'ログインはこちら',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 color: Colors.white,
               ),
             ),
-            color: Colors.grey,
+            color: Colors.green,
+            icon: const Icon(
+              FontAwesomeIcons.signInAlt,
+              color: Colors.white,
+            ),
             onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.google),
           ),
           const Divider(),
-          CustomCircleIconButton(
+          CustomCircleButton(
             margin: const EdgeInsets.only(top: 8),
-            label: const Text(
-              'Googleで登録',
+            child: const Text(
+              'ゲストとしてアプリを利用してみる',
               style: TextStyle(
-                fontSize: 18,
-                color: Colors.white,
+                fontSize: 16,
               ),
             ),
-            color: Colors.grey,
+            color: Colors.lightBlue[100],
             onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.google),
           ),
         ],
       ),

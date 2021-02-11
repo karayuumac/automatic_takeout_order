@@ -17,4 +17,12 @@ class UserStateNotifier extends StateNotifier<UserState> {
   void setUser({bool isAuthenticated, String uid}) {
     state = state.copyWith(isAuthenticated: isAuthenticated, uid: uid);
   }
+
+  bool isAuthenticated() {
+    return state.isAuthenticated;
+  }
+
+  String getUid() {
+    return state.uid;
+  }
 }

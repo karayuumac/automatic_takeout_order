@@ -1,7 +1,11 @@
+import 'package:automatic_takeout_order/view/authenticated/home_view.dart';
 import 'package:automatic_takeout_order/view/middleware/amplify/initialize_amplify_middleware.dart';
+import 'package:automatic_takeout_order/view/non_authenticated/register_view.dart';
+import 'package:automatic_takeout_order/view/non_authenticated/stratup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 Future<void> main() async {
   runApp(MyApp());
@@ -38,7 +42,14 @@ class MyApp extends StatelessWidget {
         Locale('ja', 'JP'),
       ],
       home: MaterialApp(
-        home: InitializeAmplifyMiddleware(),
+        routes: <String, WidgetBuilder>{
+          '/startup': (BuildContext context) => StartupView(),
+          '/home': (BuildContext context) => HomeView(),
+          '/register': (BuildContext context) => RegisterView(),
+        },
+        home: ProviderScope(
+          child: InitializeAmplifyMiddleware(),
+        )
       ),
     );
   }
