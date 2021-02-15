@@ -1,4 +1,5 @@
 import 'package:amplify_flutter/amplify.dart';
+import 'package:automatic_takeout_order/api/amplify/amplify_api.dart';
 import 'package:automatic_takeout_order/state/auth/user/user_state.dart';
 import 'package:automatic_takeout_order/view/authenticated/home_view.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/stratup_view.dart';
@@ -11,11 +12,15 @@ final userStateNotifierProvider =
   StateNotifierProvider((_) => UserStateNotifier());
 
 class AuthMiddleWare extends HookWidget {
+  const AuthMiddleWare(this.amplifyApi);
+
+  final AmplifyApiInterface amplifyApi;
+
   @override
   Widget build(BuildContext context) {
     final provider = useProvider(userStateNotifierProvider);
 
-    Amplify.Hub.listen([HubChannel.Auth], (dynamic event) {
+    amplifyApi.listen([HubChannel.Auth], (dynamic event) {
       switch ((event as HubEvent).eventName) {
         case 'SIGNED_IN':
           {

@@ -7,6 +7,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'api/amplify/amplify_api.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -18,9 +20,8 @@ class MyApp extends StatelessWidget {
       title: 'automatic_takeout_order',
       theme: ThemeData(
         primaryColor: Colors.white,
-        textTheme: GoogleFonts.sawarabiGothicTextTheme(
-          Theme.of(context).textTheme
-        ),
+        textTheme:
+            GoogleFonts.sawarabiGothicTextTheme(Theme.of(context).textTheme),
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(
             color: Colors.black,
@@ -47,8 +48,10 @@ class MyApp extends StatelessWidget {
           '/register': (BuildContext context) => RegisterView(),
         },
         home: ProviderScope(
-          child: InitializeAmplifyMiddleware(),
-        )
+          child: InitializeAmplifyMiddleware(
+            amplifyApi: amplifyApi,
+          ),
+        ),
       ),
     );
   }
