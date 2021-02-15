@@ -45,7 +45,7 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-amplify/
+amplify/*
 lib/amplifyconfiguration.dart
 
 #amplify

@@ -24,8 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  amplify_flutter:
   amplify_auth_cognito:
+  amplify_flutter:
 
   flutter_native_splash:
 
@@ -46,11 +46,12 @@ dependencies:
   cupertino_icons:
 
 dev_dependencies:
+  build_runner:
+
   flutter_test:
     sdk: flutter
   mockito:
 
-  build_runner:
   freezed:
 
 # For information on the generic Dart part of this file, see the

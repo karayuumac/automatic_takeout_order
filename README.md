@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/karayuumac/automatic_takeout_order/branch/master/graph/badge.svg?token=gtx7EdVtHV)](https://codecov.io/gh/karayuumac/automatic_takeout_order)
+[![CircleCI](https://img.shields.io/circleci/build/gh/karayuumac/automatic_takeout_order)](https://circleci.com/gh/circleci/circleci-docs)
+
 # automatic_takeout_order
 
 持ち帰り予約サービスの利用者アプリ
