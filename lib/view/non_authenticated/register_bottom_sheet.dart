@@ -6,8 +6,7 @@ class RegisterBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(5),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+      padding: const EdgeInsets.all(8),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
