@@ -1,4 +1,5 @@
 import 'package:automatic_takeout_order/components/buttons/custom_circle_button.dart';
+import 'package:automatic_takeout_order/key/keys.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -47,6 +48,7 @@ class RegisterBottomSheet extends StatelessWidget {
           CustomCircleIconButton(
             label: const Text(
               'メールアドレスで登録',
+              key: Keys.registerByEmail,
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white,

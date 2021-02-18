@@ -38,6 +38,23 @@ void main() {
       expect(provider.isAuthenticated, false);
     });
 
+    testWidgets('should call amplifyApi#listene method',
+        (WidgetTester tester) async {
+      final mockAmplifyApi = MockAmplifyApi();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp(
+            home: AuthMiddleWare(
+              mockAmplifyApi,
+            ),
+          ),
+        ),
+      );
+
+      verify(mockAmplifyApi.listen(any, any)).called(1);
+    });
+
     testWidgets('should go to StartupView Page when not authenticated',
         (WidgetTester tester) async {
       await tester.pumpWidget(

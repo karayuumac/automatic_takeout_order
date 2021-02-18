@@ -1,4 +1,5 @@
 import 'package:automatic_takeout_order/components/buttons/custom_circle_button.dart';
+import 'package:automatic_takeout_order/key/keys.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/register_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,7 @@ class StartupView extends StatelessWidget {
               CustomCircleButton(
                 child: const Text(
                   'はじめる',
+                  key: Keys.start,
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,
@@ -42,7 +44,7 @@ class StartupView extends StatelessWidget {
                     context: context,
                     builder: (BuildContext context) {
                       return RegisterBottomSheet();
-                    }
+                    },
                   );
                 },
               ),
