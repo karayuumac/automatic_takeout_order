@@ -1,5 +1,6 @@
 import 'package:automatic_takeout_order/components/buttons/custom_circle_button.dart';
-import 'package:automatic_takeout_order/key/keys.dart';
+import 'package:automatic_takeout_order/constants/keys.dart';
+import 'package:automatic_takeout_order/constants/route_name.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -59,9 +60,9 @@ class RegisterBottomSheet extends StatelessWidget {
               Icons.mail_rounded,
               color: Colors.white,
             ),
-            onPressed: () {
+            onPressed: () async {
               Navigator.of(context).pop();
-              Navigator.of(context).pushNamed('/register');
+              await Navigator.of(context).pushNamed(RouteName.register);
             },
           ),
           CustomCircleIconButton(

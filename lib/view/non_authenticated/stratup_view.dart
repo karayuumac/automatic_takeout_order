@@ -1,5 +1,5 @@
 import 'package:automatic_takeout_order/components/buttons/custom_circle_button.dart';
-import 'package:automatic_takeout_order/key/keys.dart';
+import 'package:automatic_takeout_order/constants/keys.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/register_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 

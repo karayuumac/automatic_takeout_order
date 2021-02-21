@@ -42,15 +42,33 @@ class _RegisterViewState extends State<RegisterView> {
                   child: const Text('メールアドレスを入力してください。'),
                 ),
                 Form(
-                  child: TextFormField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'メールアドレス',
-                    ),
-                    onChanged: (string) {
-                      _validate(string);
-                    },
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 16),
+                        child: TextFormField(
+                          controller: _emailController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'メールアドレス',
+                          ),
+                          onChanged: (string) {
+                            _validateEmail(string);
+                          },
+                        ),
+                      ),
+
+                      TextFormField(
+                        controller: _emailController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'パスワード',
+                        ),
+                        onChanged: (string) {
+                          _validateEmail(string);
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -72,9 +90,9 @@ class _RegisterViewState extends State<RegisterView> {
     );
   }
 
-  void _validate(String email) {
+  void _validateEmail(String email) {
     final hasMatched = RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(email);
     setState(() {
       _disabled = !hasMatched;

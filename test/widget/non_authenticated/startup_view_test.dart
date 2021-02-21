@@ -1,4 +1,5 @@
-import 'package:automatic_takeout_order/key/keys.dart';
+import 'package:automatic_takeout_order/constants/keys.dart';
+import 'package:automatic_takeout_order/constants/route_name.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/register_bottom_sheet.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/register_view.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/stratup_view.dart';
@@ -15,7 +16,7 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           routes: <String, WidgetBuilder>{
-            '/register': (BuildContext context) => RegisterView(),
+            RouteName.register: (BuildContext context) => RegisterView(),
           },
           home: Scaffold(
             body: StartupView(),

@@ -1,3 +1,4 @@
+import 'package:automatic_takeout_order/constants/route_name.dart';
 import 'package:automatic_takeout_order/view/authenticated/home_view.dart';
 import 'package:automatic_takeout_order/view/middleware/amplify/initialize_amplify_middleware.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/register_view.dart';
@@ -43,9 +44,9 @@ class MyApp extends StatelessWidget {
       ],
       home: MaterialApp(
         routes: <String, WidgetBuilder>{
-          '/startup': (BuildContext context) => StartupView(),
-          '/home': (BuildContext context) => HomeView(),
-          '/register': (BuildContext context) => RegisterView(),
+          RouteName.startup: (BuildContext context) => StartupView(),
+          RouteName.home: (BuildContext context) => HomeView(),
+          RouteName.register: (BuildContext context) => RegisterView(),
         },
         home: ProviderScope(
           child: InitializeAmplifyMiddleware(
