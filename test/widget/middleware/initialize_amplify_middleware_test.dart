@@ -9,7 +9,7 @@ import 'package:mockito/mockito.dart';
 class MockAmplifyApi extends Mock implements AmplifyApiInterface {}
 
 void main() {
-  group('initialize_amplify_middleware test', () {
+  group('InitializeAmplifyMiddleware', () {
     testWidgets('LoadingView should be seen during configuration',
         (WidgetTester tester) async {
       await tester.pumpWidget(
@@ -24,7 +24,7 @@ void main() {
       expect(find.text('初期化中... 少々お待ちください'), findsOneWidget);
     });
 
-    testWidgets('it should go to Page AuthMiddleWare when initialized',
+    testWidgets('should go to AuthMiddleWare Page when initialized',
         (WidgetTester tester) async {
       final mockAmplifyApi = MockAmplifyApi();
       when(mockAmplifyApi.initializeAmplify())
