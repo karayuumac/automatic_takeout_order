@@ -1,5 +1,5 @@
 [![codecov](https://codecov.io/gh/karayuumac/automatic_takeout_order/branch/master/graph/badge.svg?token=gtx7EdVtHV)](https://codecov.io/gh/karayuumac/automatic_takeout_order)
-[![CircleCI](https://img.shields.io/circleci/build/gh/karayuumac/automatic_takeout_order)](https://circleci.com/gh/circleci/circleci-docs)
+[![CircleCI](https://img.shields.io/circleci/build/gh/karayuumac/automatic_takeout_order)](https://circleci.com/gh/karayuumac/automatic_takeout_order)
 
 # automatic_takeout_order
 
