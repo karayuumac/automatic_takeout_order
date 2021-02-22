@@ -1,19 +1,38 @@
-[![codecov](https://codecov.io/gh/karayuumac/automatic_takeout_order/branch/master/graph/badge.svg?token=gtx7EdVtHV)](https://codecov.io/gh/karayuumac/automatic_takeout_order)
-[![CircleCI](https://img.shields.io/circleci/build/gh/karayuumac/automatic_takeout_order)](https://circleci.com/gh/karayuumac/automatic_takeout_order)
+<p align="center">
+  <a href="https://circleci.com/gh/karayuumac/automatic_takeout_order">
+    <img src="https://img.shields.io/circleci/build/gh/karayuumac/automatic_takeout_order" alt="Build Status" />
+  </a>
+  <a href="https://codecov.io/gh/karayuumac/automatic_takeout_order">
+    <img src="https://codecov.io/gh/karayuumac/automatic_takeout_order/branch/master/graph/badge.svg?token=gtx7EdVtHV" alt="Coverage Status" />
+  </a>
+</p>
 
 # automatic_takeout_order
+--
 
 持ち帰り予約サービスの利用者アプリ
 
-## Getting Started
+A user application of takeout-booking service.
 
-This project is a starting point for a Flutter application.
+# Technology used in this project
 
-A few resources to get you started if this is your first Flutter project:
+- [Flutter](https://flutter.dev/)
+- [AWS Amplify](https://aws.amazon.com/jp/amplify/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Development Setup
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Make sure that Flutter and amplify-cli are installed in your computer.**
+
+```bash
+# install dependencies
+flutter pub get
+
+# initialize new project for amplify
+amplify setup
+
+# add auth
+amplify add auth
+
+# push your change to upstream
+amplify push
+```
