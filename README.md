@@ -8,13 +8,14 @@
 </p>
 
 # automatic_takeout_order
---
+
+---
 
 持ち帰り予約サービスの利用者アプリ
 
 A user application of takeout-booking service.
 
-# Technology used in this project
+## Technology used in this project
 
 - [Flutter](https://flutter.dev/)
 - [AWS Amplify](https://aws.amazon.com/jp/amplify/)

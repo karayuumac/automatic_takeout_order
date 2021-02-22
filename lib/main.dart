@@ -1,7 +1,7 @@
 import 'package:automatic_takeout_order/constants/route_name.dart';
 import 'package:automatic_takeout_order/view/authenticated/home_view.dart';
 import 'package:automatic_takeout_order/view/middleware/amplify/initialize_amplify_middleware.dart';
-import 'package:automatic_takeout_order/view/non_authenticated/register_view.dart';
+import 'package:automatic_takeout_order/view/non_authenticated/register/register_view.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/stratup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
