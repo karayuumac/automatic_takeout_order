@@ -91,7 +91,10 @@ class RegisterBottomSheet extends StatelessWidget {
               ),
             ),
             color: Colors.lightBlue[100],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(RouteName.termsOfService);
+            },
           ),
         ],
       ),

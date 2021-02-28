@@ -9,8 +9,6 @@
 
 # automatic_takeout_order
 
----
-
 持ち帰り予約サービスの利用者アプリ
 
 A user application of takeout-booking service.

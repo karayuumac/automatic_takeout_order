@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  package_info:
+
   amplify_auth_cognito:
   amplify_flutter:
 
@@ -40,6 +42,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   google_fonts:
+
+  form_validator:
+
+  url_launcher:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

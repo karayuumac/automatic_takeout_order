@@ -3,6 +3,7 @@ import 'package:automatic_takeout_order/view/authenticated/home_view.dart';
 import 'package:automatic_takeout_order/view/middleware/amplify/initialize_amplify_middleware.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/register/register_view.dart';
 import 'package:automatic_takeout_order/view/non_authenticated/stratup_view.dart';
+import 'package:automatic_takeout_order/view/terms_of_service/terms_of_service_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,41 +18,41 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'automatic_takeout_order',
-      theme: ThemeData(
-        primaryColor: Colors.white,
-        textTheme:
-            GoogleFonts.sawarabiGothicTextTheme(Theme.of(context).textTheme),
-        inputDecorationTheme: const InputDecorationTheme(
-          labelStyle: TextStyle(
-            color: Colors.black,
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'automatic_takeout_order',
+        theme: ThemeData(
+          primaryColor: Colors.white,
+          textTheme:
+              GoogleFonts.sawarabiGothicTextTheme(Theme.of(context).textTheme),
+          inputDecorationTheme: const InputDecorationTheme(
+            labelStyle: TextStyle(
+              color: Colors.black,
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
+            ),
           ),
         ),
-      ),
-      darkTheme: ThemeData.dark(),
-      locale: const Locale('ja', 'Jp'),
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('ja', 'JP'),
-      ],
-      home: MaterialApp(
+        darkTheme: ThemeData.dark(),
+        locale: const Locale('ja', 'Jp'),
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ja', 'JP'),
+        ],
         routes: <String, WidgetBuilder>{
           RouteName.startup: (BuildContext context) => StartupView(),
           RouteName.home: (BuildContext context) => HomeView(),
           RouteName.register: (BuildContext context) => RegisterView(),
+          RouteName.termsOfService: (BuildContext context) =>
+              TermsOfServiceView(),
         },
-        home: ProviderScope(
-          child: InitializeAmplifyMiddleware(
-            amplifyApi: amplifyApi,
-          ),
+        home: InitializeAmplifyMiddleware(
+          amplifyApi: amplifyApi,
         ),
       ),
     );
